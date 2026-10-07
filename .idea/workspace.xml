@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="build: add jackson bom and databind dependency">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/FeatureVector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/Neighbor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/Sample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/util/DistanceUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/util/JsonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ml/knn/iris/iris_dataset.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ml/knn/iris/iris_dataset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="build: add lombok and slf4j dependencies">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tinylog.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/FeatureVector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/FeatureVector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/util/DistanceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/util/DistanceUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +134,55 @@
       <option name="project" value="LOCAL" />
       <updated>1791354402186</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="chore: update gitignore">
+      <option name="closed" value="true" />
+      <created>1791354492547</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1791354492547</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chore: add iris dataset">
+      <option name="closed" value="true" />
+      <created>1791354531768</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1791354531768</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: create a simple KNN classifier">
+      <option name="closed" value="true" />
+      <created>1791354564158</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1791354564158</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chore: create an example for using the KNN classifier">
+      <option name="closed" value="true" />
+      <created>1791354582857</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1791354582857</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1791354591559</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1791354591559</updated>
+    </task>
+    <task id="LOCAL-00011" summary="build: add lombok and slf4j dependencies">
+      <option name="closed" value="true" />
+      <created>1791358401028</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1791358401029</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +194,13 @@
     <MESSAGE value="chore: add jetbrains-annotations" />
     <MESSAGE value="feat: add ascending insertion sort on integers" />
     <MESSAGE value="build: add jackson bom and databind dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: add jackson bom and databind dependency" />
+    <MESSAGE value="chore: update gitignore" />
+    <MESSAGE value="chore: add iris dataset" />
+    <MESSAGE value="feat: create a simple KNN classifier" />
+    <MESSAGE value="chore: create an example for using the KNN classifier" />
+    <MESSAGE value="chore: update workspace" />
+    <MESSAGE value="build: add lombok and slf4j dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: add lombok and slf4j dependencies" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
