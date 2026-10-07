@@ -70,6 +70,12 @@
             <version>${tinylog.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.tinylog</groupId>
+            <artifactId>tinylog-impl</artifactId>
+            <version>${tinylog.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

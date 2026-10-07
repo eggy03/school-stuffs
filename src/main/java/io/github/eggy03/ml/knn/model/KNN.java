@@ -4,6 +4,7 @@ import io.github.eggy03.ml.knn.entity.FeatureVector;
 import io.github.eggy03.ml.knn.entity.Neighbor;
 import io.github.eggy03.ml.knn.entity.Sample;
 import io.github.eggy03.ml.knn.util.DistanceUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
@@ -13,6 +14,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Slf4j
 public final class KNN<L> {
 
     private final int k;
@@ -25,22 +27,27 @@ public final class KNN<L> {
      * @param trainingData the training data based on which predictions will happen
      */
     public KNN(int k, @NotNull List<@NotNull Sample<L>> trainingData) {
-        this.k = k;
-        this.trainingData = Objects
-                .requireNonNull(trainingData, "trainingData cannot be null")
-                .stream()
-                .map(sample -> Objects.requireNonNull(sample, "sample cannot be null"))
-                .toList();
 
         if (k < 1)
             throw new IllegalArgumentException("Neighbors to consider cannot be less than 1");
 
         if (k > trainingData.size())
             throw new IllegalArgumentException("Neighbors to consider cannot be greater than the total number of samples provided");
+
+        this.k = k;
+        this.trainingData = Objects
+                .requireNonNull(trainingData, "trainingData cannot be null")
+                .stream()
+                .map(sample -> Objects.requireNonNull(sample, "sample in trainingData cannot be null"))
+                .toList();
+
+        log.info("KNN Model initiated with {} samples, with k={}", trainingData.size(), k);
     }
 
     public @NotNull L predict(@NotNull FeatureVector queryVector) {
         Objects.requireNonNull(queryVector, "queryVector cannot be null");
+
+        log.info("Provided Query Vector: {}", queryVector.featureList());
 
         // for each sample in the training data,
         // we calculate the Euclidean distance between the training sample feature vector and the query sample feature vector
@@ -55,6 +62,16 @@ public final class KNN<L> {
                 }).sorted(Comparator.comparing(Neighbor::distance))
                 .limit(k)
                 .toList();
+
+        log.info("For the given query vector, the following {} nearest neighbors have been located:", k);
+        nearestNeighborList.forEach(neighbor ->
+                log.info(
+                        "Sample -> Features = {} | Label = {} | Distance = {}",
+                        neighbor.sample().featureVector().featureList(),
+                        neighbor.sample().label(),
+                        String.format("%.4f", neighbor.distance())
+                )
+        );
 
         // collect all the labels from the nearest neighbor list
         List<L> nearestNeighborLabelList = nearestNeighborList

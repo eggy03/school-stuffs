@@ -2,16 +2,16 @@ package io.github.eggy03.ml.knn.util;
 
 
 import io.github.eggy03.ml.knn.entity.FeatureVector;
+import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Objects;
 
+@UtilityClass
+@Slf4j
 public final class DistanceUtils {
-
-    private DistanceUtils() {
-        throw new IllegalStateException("Utility Class");
-    }
 
     public static double euclideanDistance(@NotNull FeatureVector featureVectorOne, @NotNull FeatureVector featureVectorTwo) {
 
@@ -34,7 +34,9 @@ public final class DistanceUtils {
             sum = sum + Math.pow(difference, 2);
         }
 
-        return Math.sqrt(sum);
+        double euclideanDistance = Math.sqrt(sum);
+        log.debug("Euclidean Distance between {} and {} is {}", featureVectorOneFeatures, featureVectorTwoFeatures, euclideanDistance);
+        return euclideanDistance;
 
     }
 }

@@ -16,9 +16,9 @@ public record FeatureVector(@NotNull List<@NotNull Number> featureList) {
 
     public FeatureVector(@NotNull List<@NotNull Number> featureList) {
 
-        this.featureList = Objects.requireNonNull(featureList, "feature list cannot be null")
+        this.featureList = Objects.requireNonNull(featureList, "featureList cannot be null")
                 .stream()
-                .map(feature -> Objects.requireNonNull(feature, "feature cannot be null"))
+                .map(feature -> Objects.requireNonNull(feature, "feature in featureList cannot be null"))
                 .toList();
     }
 
