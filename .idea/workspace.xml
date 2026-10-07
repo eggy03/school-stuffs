@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="build: add lombok and slf4j dependencies">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tinylog.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="chore: update workspace">
+      <change afterPath="$PROJECT_DIR$/docs/ml/KNN.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/FeatureVector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/entity/FeatureVector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/util/DistanceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/util/DistanceUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1791358401029</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="refactor: added logging">
+      <option name="closed" value="true" />
+      <created>1791362836695</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1791362836695</updated>
+    </task>
+    <task id="LOCAL-00013" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1791362843412</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1791362843412</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,9 +208,10 @@
     <MESSAGE value="chore: add iris dataset" />
     <MESSAGE value="feat: create a simple KNN classifier" />
     <MESSAGE value="chore: create an example for using the KNN classifier" />
-    <MESSAGE value="chore: update workspace" />
     <MESSAGE value="build: add lombok and slf4j dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: add lombok and slf4j dependencies" />
+    <MESSAGE value="refactor: added logging" />
+    <MESSAGE value="chore: update workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
