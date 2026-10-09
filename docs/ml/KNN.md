@@ -43,7 +43,7 @@ Our prediction strategy is simple.
 2) Then we will sort the `dataset sample` in ascending order of their
    distances from the `query sample`.
 
-3) Then we will consider `k nearest neighbors/samples` and will take whichever `label` appeared the maximum time.
+3) Then we will consider `k nearest neighbors/samples` and will take whichever `label` appeared the maximum time (majority voting).
 
 # Design
 
@@ -199,15 +199,12 @@ public L predict(FeatureVector queryVector) {
 }
 ```
 
-The time complexity of this function is `O(nxm)`, where `n = number of training samples` and
-`m = number of features in a single sample`.
-
 # Architectural Limitations
 
 1) Features must be numeric
 2) All samples must have the same number of features
 
-# Training, Testing and Observation
+# Training, Testing, Observation and Inference
 
 ## Training
 
@@ -259,7 +256,7 @@ Our `testing_dataset` is as follows:
 ## Observation
 
 | K      | Correct | Accuracy |
-| ------ | ------- | -------- |
+|--------|---------|----------|
 | 3–45   | 30/30   | 100.00%  |
 | 47–49  | 29/30   | 96.67%   |
 | 51     | 28/30   | 93.33%   |
@@ -271,5 +268,140 @@ Our `testing_dataset` is as follows:
 | 89     | 18/30   | 60.00%   |
 | 91–119 | 10/30   | 33.33%   |
 
-Initially, testing the 30 samples from the `testing_dataset` for increasing values of `K` shows us
-that the accuracy of the predictions gradually when the classifier has to consider a large number of neighbors.
+Initially, testing the 30 samples from the `testing_dataset`, against the `training_dataset` for increasing values of
+`K`
+shows us that the accuracy of the predictions decreases gradually when the classifier has to consider a large number of
+neighbors.
+
+But we still don't know what the incorrect predictions are, as in, if `Iris-setosa` was expected, what did we get
+instead.
+To know that, we will take the help of the confusion matrix.
+
+| Actual ↓ / Predicted → | Iris-setosa | Iris-versicolor | Iris-virginica |
+|------------------------|-------------|-----------------|----------------|
+| Iris-setosa            |             |                 |                |
+| Iris-versicolor        |             |                 |                |
+| Iris-virginica         |             |                 |                |
+
+We can see that for `K= 3 to 45`, we have a 100% accuracy.
+
+Let's consider the confusion matrices for `k = 7, 45, 51, 81, 91`
+
+### k = 7
+
+| Actual ↓ / Predicted → | Iris-setosa | Iris-versicolor | Iris-virginica |
+|------------------------|-------------|-----------------|----------------|
+| Iris-setosa            | 10          | 0               | 0              |
+| Iris-versicolor        | 0           | 10              | 0              |
+| Iris-virginica         | 0           | 0               | 10             |
+
+### k = 45
+
+| Actual ↓ / Predicted → | Iris-setosa | Iris-versicolor | Iris-virginica |
+|------------------------|-------------|-----------------|----------------|
+| Iris-setosa            | 10          | 0               | 0              |
+| Iris-versicolor        | 0           | 10              | 0              |
+| Iris-virginica         | 0           | 0               | 10             |
+
+### k = 51
+
+| Actual ↓ / Predicted → | Iris-setosa | Iris-versicolor | Iris-virginica |
+|------------------------|-------------|-----------------|----------------|
+| Iris-setosa            | 10          | 0               | 0              |
+| Iris-versicolor        | 0           | 10              | 0              |
+| Iris-virginica         | 0           | 2               | 8              |
+
+### k = 81
+
+| Actual ↓ / Predicted → | Iris-setosa | Iris-versicolor | Iris-virginica |
+|------------------------|-------------|-----------------|----------------|
+| Iris-setosa            | 10          | 0               | 0              |
+| Iris-versicolor        | 0           | 10              | 0              |
+| Iris-virginica         | 0           | 10              | 0              |
+
+### k = 91
+
+| Actual ↓ / Predicted → | Iris-setosa | Iris-versicolor | Iris-virginica |
+|------------------------|-------------|-----------------|----------------|
+| Iris-setosa            | 0           | 10              | 0              |
+| Iris-versicolor        | 0           | 10              | 0              |
+| Iris-virginica         | 0           | 10              | 0              |
+
+## Inference
+
+For (k=7) and (k=45), all 30 test samples were classified correctly.
+
+At (k=51), two `Iris-virginica` samples were incorrectly classified as `Iris-versicolor`, reducing the accuracy to
+`93.33%`.
+
+At (k=81), all `Iris-virginica` samples were classified as `Iris-versicolor`, while the `Iris-setosa` and
+`Iris-versicolor` samples were classified correctly. The accuracy consequently decreased to `66.67%`.
+
+At (k=91), the model classified all 30 test samples as `Iris-versicolor`, resulting in an accuracy of `33.33%`.
+
+This indicates that the majority-voting mechanism increasingly favored `Iris-versicolor` for the selected test samples when a
+large number of neighbors was considered.
+
+### Tie Breaking in Majority Voting
+
+The current model tries to select the label from it's selected neighbors by using `Majority Voting`.
+
+Say, if, for `K=31`, we have:
+
+1) Occurrences of `Iris-setosa`: 19
+2) Occurrences of `Iris-versicolor`: 10
+3) Occurrences of `Iris-virginica`: 2
+
+`Iris-setosa` will be selected.
+
+But for large values of `K`, such as `K=119`, we may end up with:
+
+1) Occurrences of `Iris-setosa`: 40
+2) Occurrences of `Iris-versicolor`: 40
+3) Occurrences of `Iris-virginica`: 39
+
+When multiple labels have the same maximum vote count, the current implementation does not define an explicit tie-breaking rule.
+Since `Collectors.groupingBy()` uses a `HashMap` by default, the iteration order of the labels is not guaranteed.
+Consequently, the selected label in a tie should not be assumed to be deterministic.
+
+To break this tie, we can implement one of the methods mentioned [here](https://thefoundling.net/prof/courses/fall24/daemen/401notes10_22.pdf).
+
+For our model, we will choose `Weighted Voting`, a.k.a., the `Inverse Distance` method.
+
+We re-factor our `predict` function as follows:
+
+```java
+public L predict(FeatureVector queryVector) {
+        // for each sample in the training data,
+        // we calculate the Euclidean distance between the training sample feature vector and the query sample feature vector
+        // and then map the distance and the training sample into a new neighbor.
+        // the resultant neighbors are sorted based on their increasing order of distances from the query sample
+        // and first k neighbors are selected
+        List<Neighbor<L>> nearestNeighborList = trainingData
+                .stream()
+                .map(sample -> {
+                    double euclideanDistance = DistanceUtils.euclideanDistance(sample.featureVector(), queryVector);
+                    return new Neighbor<>(euclideanDistance, sample);
+                }).sorted(Comparator.comparing(Neighbor::distance))
+                .limit(k)
+                .toList();
+        
+        // and then create a weight map of the labels
+        Map<L, Double> labelWeightMap = nearestNeighborList
+                .stream()
+                .collect(Collectors.groupingBy(
+                                neighbor -> neighbor.sample().label(),
+                                Collectors.summingDouble(neighbor -> neighbor.distance() == 0 ? 1.0 / 1e-9 : 1.0 / neighbor.distance())
+                        )
+                );
+
+        // from this weight map find the label with the largest weight
+        return labelWeightMap
+                .entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue())
+                .orElseThrow(() -> new RuntimeException("Could not find the max occurrence of a label"))
+                .getKey();
+    }
+```
+With the new `Weighted Voting` method, we have achieved a 100% accuracy on from `k= 3 to 119`
