@@ -1,5 +1,8 @@
 # Introduction
 
+Last Modified: October 9, 2026,
+Author: Sayan Bhattacharjee
+
 This document attempts at capturing my design philosophy and decisions during designing a simple KNN model
 
 For our sample data, we will take a look at the [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
