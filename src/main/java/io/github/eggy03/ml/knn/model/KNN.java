@@ -41,13 +41,13 @@ public final class KNN<L> {
                 .map(sample -> Objects.requireNonNull(sample, "sample in trainingData cannot be null"))
                 .toList();
 
-        log.info("KNN Model initiated with {} samples, with k={}", trainingData.size(), k);
+        log.debug("KNN Model initiated with {} samples, with k={}", trainingData.size(), k);
     }
 
     public @NotNull L predict(@NotNull FeatureVector queryVector) {
         Objects.requireNonNull(queryVector, "queryVector cannot be null");
 
-        log.info("Provided Query Vector: {}", queryVector.featureList());
+        log.debug("Provided Query Vector: {}", queryVector.featureList());
 
         // for each sample in the training data,
         // we calculate the Euclidean distance between the training sample feature vector and the query sample feature vector
@@ -63,9 +63,9 @@ public final class KNN<L> {
                 .limit(k)
                 .toList();
 
-        log.info("For the given query vector, the following {} nearest neighbors have been located:", k);
+        log.debug("For the given query vector, the following {} nearest neighbors have been located:", k);
         nearestNeighborList.forEach(neighbor ->
-                log.info(
+                log.debug(
                         "Sample -> Features = {} | Label = {} | Distance = {}",
                         neighbor.sample().featureVector().featureList(),
                         neighbor.sample().label(),
