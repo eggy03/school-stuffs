@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="chore: update workspace">
-      <change afterPath="$PROJECT_DIR$/docs/ml/KNN.md" afterDir="false" />
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="refactor: set logging to debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ml/KNN.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ml/KNN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.InsertionSort.executor": "Run",
     "Application.KNNExample.executor": "Run",
+    "Application.KNNTesting.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -65,6 +67,8 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "G:/GitHub/school-stuffs",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
@@ -192,7 +196,47 @@
       <option name="project" value="LOCAL" />
       <updated>1791362843412</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1791393673953</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1791393673953</updated>
+    </task>
+    <task id="LOCAL-00015" summary="docs: add KNN design documentation">
+      <option name="closed" value="true" />
+      <created>1791393699303</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1791393699303</updated>
+    </task>
+    <task id="LOCAL-00016" summary="docs: add KNN design documentation">
+      <option name="closed" value="true" />
+      <created>1791524775854</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1791524775854</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor: split iris dataset into training and testing dataset">
+      <option name="closed" value="true" />
+      <created>1791524940083</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1791524940083</updated>
+    </task>
+    <task id="LOCAL-00018" summary="refactor: set logging to debug">
+      <option name="closed" value="true" />
+      <created>1791525155179</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1791525155179</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +255,10 @@
     <MESSAGE value="build: add lombok and slf4j dependencies" />
     <MESSAGE value="refactor: added logging" />
     <MESSAGE value="chore: update workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace" />
+    <MESSAGE value="docs: add KNN design documentation" />
+    <MESSAGE value="refactor: split iris dataset into training and testing dataset" />
+    <MESSAGE value="refactor: set logging to debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: set logging to debug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
