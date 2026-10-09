@@ -15,7 +15,7 @@ public class KNNExample {
     static ObjectMapper objectMapper = new ObjectMapper();
 
     static List<Sample<String>> trainingData = JsonUtils.deserializeFromJson(
-            "/ml/knn/iris/iris_dataset.json",
+            "/ml/knn/iris/iris_training_dataset.json",
             objectMapper,
             objectMapper.getTypeFactory().constructParametricType(Sample.class, String.class)
     );
