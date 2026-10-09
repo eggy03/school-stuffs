@@ -18,7 +18,8 @@ import java.util.stream.Collectors;
 public final class KNN<L> {
 
     private final int k;
-    private final @Unmodifiable @NotNull List<@NotNull Sample<L>> trainingData;
+    private final @Unmodifiable
+    @NotNull List<@NotNull Sample<L>> trainingData;
 
     /**
      * Constructs a KNN model with the training data it needs to memorize
@@ -73,19 +74,21 @@ public final class KNN<L> {
                 )
         );
 
-        // collect all the labels from the nearest neighbor list
-        List<L> nearestNeighborLabelList = nearestNeighborList
+        // and then create a weight map of the labels
+        // which is the sum of the inverse distance of the neighbors
+        // grouped by labels
+        Map<L, Double> labelWeightMap = nearestNeighborList
                 .stream()
-                .map(neighbor -> neighbor.sample().label())
-                .toList();
+                .collect(Collectors.groupingBy(
+                                neighbor -> neighbor.sample().label(),
+                                Collectors.summingDouble(neighbor -> neighbor.distance() == 0 ? 1.0 / 1e-9 : 1.0 / neighbor.distance())
+                        )
+                );
 
-        // and then create a frequency map of the labels (Map<Label, OccurrenceCount>)
-        Map<L, Long> labelFrequencyMap = nearestNeighborLabelList
-                .stream()
-                .collect(Collectors.groupingBy(label -> label, Collectors.counting()));
+        log.debug("The weight-map is as follows:\n{}", labelWeightMap);
 
-        // from this frequency map find the label with the largest occurrence
-        return labelFrequencyMap
+        // from this weight map find the label with the largest summed-weight
+        return labelWeightMap
                 .entrySet()
                 .stream()
                 .max(Map.Entry.comparingByValue())
