@@ -113,7 +113,7 @@ Based on this data, we design the following:
 public final class DistanceUtils {
 
     public static double euclideanDistance(FeatureVector featureVectorOne, FeatureVector featureVectorTwo) {
-        
+
         if (featureVectorOne.isEmpty() || featureVectorTwo.isEmpty())
             throw new IllegalStateException("feature vectors cannot be empty");
 
@@ -134,6 +134,7 @@ public final class DistanceUtils {
     }
 }
 ```
+
 ## Designing the Model
 
 We design our constructor which takes in the nearest neighbors to consider and the training data
@@ -143,7 +144,7 @@ public final class KNN<L> {
 
     private final int k;
     private final List<Sample<L>> trainingData;
-    
+
     public KNN(int k, List<Sample<L>> trainingData) {
 
         if (k < 1)
@@ -158,45 +159,48 @@ public final class KNN<L> {
 }
 ```
 
-Then we design our prediction function which will take in the feature vector and output a label based on the trained data
+Then we design our prediction function which will take in the feature vector and output a label based on the trained
+data
 
 ```java
 public L predict(FeatureVector queryVector) {
-        // for each sample in the training data,
-        // we calculate the Euclidean distance between the training sample feature vector and the query sample feature vector
-        // and then map the distance and the training sample into a new neighbor.
-        // the resultant neighbors are sorted based on their increasing order of distances from the query sample
-        // and first k neighbors are selected
-        List<Neighbor<L>> nearestNeighborList = trainingData
-                .stream()
-                .map(sample -> {
-                    double euclideanDistance = DistanceUtils.euclideanDistance(sample.featureVector(), queryVector);
-                    return new Neighbor<>(euclideanDistance, sample);
-                }).sorted(Comparator.comparing(Neighbor::distance))
-                .limit(k)
-                .toList();
+    // for each sample in the training data,
+    // we calculate the Euclidean distance between the training sample feature vector and the query sample feature vector
+    // and then map the distance and the training sample into a new neighbor.
+    // the resultant neighbors are sorted based on their increasing order of distances from the query sample
+    // and first k neighbors are selected
+    List<Neighbor<L>> nearestNeighborList = trainingData
+            .stream()
+            .map(sample -> {
+                double euclideanDistance = DistanceUtils.euclideanDistance(sample.featureVector(), queryVector);
+                return new Neighbor<>(euclideanDistance, sample);
+            }).sorted(Comparator.comparing(Neighbor::distance))
+            .limit(k)
+            .toList();
 
-        // collect all the labels from the nearest neighbor list
-        List<L> nearestNeighborLabelList = nearestNeighborList
-                .stream()
-                .map(neighbor -> neighbor.sample().label())
-                .toList();
+    // collect all the labels from the nearest neighbor list
+    List<L> nearestNeighborLabelList = nearestNeighborList
+            .stream()
+            .map(neighbor -> neighbor.sample().label())
+            .toList();
 
-        // and then create a frequency map of the labels (Map<Label, OccurrenceCount>)
-        Map<L, Long> labelFrequencyMap = nearestNeighborLabelList
-                .stream()
-                .collect(Collectors.groupingBy(label -> label, Collectors.counting()));
+    // and then create a frequency map of the labels (Map<Label, OccurrenceCount>)
+    Map<L, Long> labelFrequencyMap = nearestNeighborLabelList
+            .stream()
+            .collect(Collectors.groupingBy(label -> label, Collectors.counting()));
 
-        // from this frequency map find the label with the largest occurrence
-        return labelFrequencyMap
-                .entrySet()
-                .stream()
-                .max(Map.Entry.comparingByValue())
-                .orElseThrow(() -> new RuntimeException("Could not find the max occurrence of a label"))
-                .getKey();
-    }
+    // from this frequency map find the label with the largest occurrence
+    return labelFrequencyMap
+            .entrySet()
+            .stream()
+            .max(Map.Entry.comparingByValue())
+            .orElseThrow(() -> new RuntimeException("Could not find the max occurrence of a label"))
+            .getKey();
+}
 ```
-The time complexity of this function is `O(nxm)`, where `n = number of training samples` and `m = number of features in a single sample`.
+
+The time complexity of this function is `O(nxm)`, where `n = number of training samples` and
+`m = number of features in a single sample`.
 
 # Architectural Limitations
 
@@ -217,9 +221,55 @@ We have 150 samples (50 samples per Iris Class), which we will split into `train
 We will test against different values of `k` such as (`3`, `5`, `7`, `9`) and
 observe the model's correctness.
 
-Our `testing dataset` is as follows:
+Our `testing_dataset` is as follows:
 
-
+| Sepal Length (cm) | Sepal Width (cm) | Petal Length (cm) | Petal Width (cm) | Label           |
+|-------------------|------------------|-------------------|------------------|-----------------|
+| 5.0               | 3.5              | 1.3               | 0.3              | Iris-setosa     |
+| 4.5               | 2.3              | 1.3               | 0.3              | Iris-setosa     |
+| 4.4               | 3.2              | 1.3               | 0.2              | Iris-setosa     |
+| 5.0               | 3.5              | 1.6               | 0.6              | Iris-setosa     |
+| 5.1               | 3.8              | 1.9               | 0.4              | Iris-setosa     |
+| 4.8               | 3.0              | 1.4               | 0.3              | Iris-setosa     |
+| 5.1               | 3.8              | 1.6               | 0.2              | Iris-setosa     |
+| 4.6               | 3.2              | 1.4               | 0.2              | Iris-setosa     |
+| 5.3               | 3.7              | 1.5               | 0.2              | Iris-setosa     |
+| 5.0               | 3.3              | 1.4               | 0.2              | Iris-setosa     |
+| 5.5               | 2.5              | 4.0               | 1.3              | Iris-versicolor |
+| 5.5               | 2.6              | 4.4               | 1.2              | Iris-versicolor |
+| 6.1               | 3.0              | 4.6               | 1.4              | Iris-versicolor |
+| 5.8               | 2.6              | 4.0               | 1.2              | Iris-versicolor |
+| 5.0               | 2.3              | 3.3               | 1.0              | Iris-versicolor |
+| 5.6               | 2.7              | 4.2               | 1.3              | Iris-versicolor |
+| 5.7               | 3.0              | 4.2               | 1.2              | Iris-versicolor |
+| 5.7               | 2.9              | 4.2               | 1.3              | Iris-versicolor |
+| 6.2               | 2.9              | 4.3               | 1.3              | Iris-versicolor |
+| 5.1               | 2.5              | 3.0               | 1.1              | Iris-versicolor |
+| 6.7               | 3.1              | 5.6               | 2.4              | Iris-virginica  |
+| 6.9               | 3.1              | 5.1               | 2.3              | Iris-virginica  |
+| 5.8               | 2.7              | 5.1               | 1.9              | Iris-virginica  |
+| 6.8               | 3.2              | 5.9               | 2.3              | Iris-virginica  |
+| 6.7               | 3.3              | 5.7               | 2.5              | Iris-virginica  |
+| 6.7               | 3.0              | 5.2               | 2.3              | Iris-virginica  |
+| 6.3               | 2.5              | 5.0               | 1.9              | Iris-virginica  |
+| 6.5               | 3.0              | 5.2               | 2.0              | Iris-virginica  |
+| 6.2               | 3.4              | 5.4               | 2.3              | Iris-virginica  |
+| 5.9               | 3.0              | 5.1               | 1.8              | Iris-virginica  |
 
 ## Observation
 
+| K      | Correct | Accuracy |
+| ------ | ------- | -------- |
+| 3–45   | 30/30   | 100.00%  |
+| 47–49  | 29/30   | 96.67%   |
+| 51     | 28/30   | 93.33%   |
+| 53–55  | 27/30   | 90.00%   |
+| 57–71  | 26/30   | 86.67%   |
+| 73–79  | 27/30   | 90.00%   |
+| 81     | 20/30   | 66.67%   |
+| 83–87  | 19/30   | 63.33%   |
+| 89     | 18/30   | 60.00%   |
+| 91–119 | 10/30   | 33.33%   |
+
+Initially, testing the 30 samples from the `testing_dataset` for increasing values of `K` shows us
+that the accuracy of the predictions gradually when the classifier has to consider a large number of neighbors.
