@@ -1,9 +1,9 @@
-package io.github.eggy03.ml.knn.model;
+package io.github.eggy03.ml.scratch.knn.model;
 
-import io.github.eggy03.ml.knn.entity.FeatureVector;
-import io.github.eggy03.ml.knn.entity.Neighbor;
-import io.github.eggy03.ml.knn.entity.Sample;
-import io.github.eggy03.ml.knn.util.DistanceUtils;
+import io.github.eggy03.ml.scratch.knn.entity.FeatureVector;
+import io.github.eggy03.ml.scratch.knn.entity.Neighbor;
+import io.github.eggy03.ml.scratch.knn.entity.Sample;
+import io.github.eggy03.ml.scratch.knn.util.DistanceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;

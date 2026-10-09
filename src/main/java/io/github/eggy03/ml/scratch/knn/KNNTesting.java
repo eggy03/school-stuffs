@@ -1,8 +1,8 @@
-package io.github.eggy03.ml.knn;
+package io.github.eggy03.ml.scratch.knn;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.eggy03.ml.knn.entity.Sample;
-import io.github.eggy03.ml.knn.model.KNN;
+import io.github.eggy03.ml.scratch.knn.entity.Sample;
+import io.github.eggy03.ml.scratch.knn.model.KNN;
 import io.github.eggy03.util.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 

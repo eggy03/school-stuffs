@@ -1,4 +1,4 @@
-package io.github.eggy03.ml.knn.entity;
+package io.github.eggy03.ml.scratch.knn.entity;
 
 import org.jetbrains.annotations.NotNull;
 

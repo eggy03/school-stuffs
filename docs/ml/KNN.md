@@ -57,7 +57,7 @@ Keeping that in mind, we create a record of `Sample<L>`, where `L` is the type o
 
 ```java
 
-import io.github.eggy03.ml.knn.entity.FeatureVector;
+import io.github.eggy03.ml.scratch.knn.entity.FeatureVector;
 
 public record Sample<L>(FeatureVector featureVector, L label) {
 }

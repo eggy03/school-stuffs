@@ -1,7 +1,7 @@
-package io.github.eggy03.ml.knn.util;
+package io.github.eggy03.ml.scratch.knn.util;
 
 
-import io.github.eggy03.ml.knn.entity.FeatureVector;
+import io.github.eggy03.ml.scratch.knn.entity.FeatureVector;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
