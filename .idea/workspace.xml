@@ -7,7 +7,8 @@
     <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="refactor: set logging to debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/ml/KNN.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ml/KNN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
