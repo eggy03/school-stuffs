@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="refactor: set logging to debug">
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="refactor: update iris dataset json location">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/smile/knn/SmileKNNExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ml/KNN.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ml/KNN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/KNNTesting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/knn/model/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +56,7 @@
     "Application.InsertionSort.executor": "Run",
     "Application.KNNExample.executor": "Run",
     "Application.KNNTesting.executor": "Run",
+    "Application.SmileKNNExample.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -65,6 +65,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "datagrid.heatmap.switchedByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "G:/GitHub/school-stuffs",
@@ -77,6 +78,14 @@
     "settings.editor.selected.configurable": "configurable.group.appearance"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\GitHub\school-stuffs\src\main\resources\ml\knn\iris\arff" />
+      <recent name="G:\GitHub\school-stuffs\src\main\resources\ml\knn\iris\csv" />
+      <recent name="G:\GitHub\school-stuffs\src\main\resources\ml\knn\iris\json" />
+      <recent name="G:\GitHub\school-stuffs\src\main\resources\ml\knn\iris" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -237,7 +246,39 @@
       <option name="project" value="LOCAL" />
       <updated>1791525155179</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactor: move my custom knn to scratch subpackage">
+      <option name="closed" value="true" />
+      <created>1791548952000</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1791548952000</updated>
+    </task>
+    <task id="LOCAL-00020" summary="docs: add author and last modified info">
+      <option name="closed" value="true" />
+      <created>1791549007238</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1791549007238</updated>
+    </task>
+    <task id="LOCAL-00021" summary="chore: add various formats of iris dataset">
+      <option name="closed" value="true" />
+      <created>1791552070277</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1791552070277</updated>
+    </task>
+    <task id="LOCAL-00022" summary="refactor: update iris dataset json location">
+      <option name="closed" value="true" />
+      <created>1791552088465</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1791552088465</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +300,11 @@
     <MESSAGE value="docs: add KNN design documentation" />
     <MESSAGE value="refactor: split iris dataset into training and testing dataset" />
     <MESSAGE value="refactor: set logging to debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: set logging to debug" />
+    <MESSAGE value="refactor: move my custom knn to scratch subpackage" />
+    <MESSAGE value="docs: add author and last modified info" />
+    <MESSAGE value="chore: add various formats of iris dataset" />
+    <MESSAGE value="refactor: update iris dataset json location" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: update iris dataset json location" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
