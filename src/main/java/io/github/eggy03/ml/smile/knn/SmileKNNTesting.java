@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Slf4j
 @SuppressWarnings("java:S1192")
-public class SmileKNNExample {
+public class SmileKNNTesting {
 
     static void main() throws IOException, URISyntaxException {
 
