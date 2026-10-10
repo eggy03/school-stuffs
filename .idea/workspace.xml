@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="refactor: update iris dataset json location">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/smile/knn/SmileKNNExample.java" afterDir="false" />
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="refactor: rename to SmileKNNTesting">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/smile/kmeans/SmileKMeansTesting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/ml/smile/knn/SmileKNNCrossValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,10 @@
     "Application.InsertionSort.executor": "Run",
     "Application.KNNExample.executor": "Run",
     "Application.KNNTesting.executor": "Run",
+    "Application.SmileKMeansTesting.executor": "Run",
+    "Application.SmileKNNCrossValidation.executor": "Run",
     "Application.SmileKNNExample.executor": "Run",
+    "Application.SmileKNNTesting.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -278,7 +281,39 @@
       <option name="project" value="LOCAL" />
       <updated>1791552088465</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="build: add smile dependency">
+      <option name="closed" value="true" />
+      <created>1791555731716</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1791555731716</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: a similar knn classification on iris dataset but with smile's implementation">
+      <option name="closed" value="true" />
+      <created>1791555770569</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1791555770569</updated>
+    </task>
+    <task id="LOCAL-00025" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1791555781776</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1791555781776</updated>
+    </task>
+    <task id="LOCAL-00026" summary="refactor: rename to SmileKNNTesting">
+      <option name="closed" value="true" />
+      <created>1791600492236</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1791600492236</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +331,6 @@
     <MESSAGE value="chore: create an example for using the KNN classifier" />
     <MESSAGE value="build: add lombok and slf4j dependencies" />
     <MESSAGE value="refactor: added logging" />
-    <MESSAGE value="chore: update workspace" />
     <MESSAGE value="docs: add KNN design documentation" />
     <MESSAGE value="refactor: split iris dataset into training and testing dataset" />
     <MESSAGE value="refactor: set logging to debug" />
@@ -304,7 +338,22 @@
     <MESSAGE value="docs: add author and last modified info" />
     <MESSAGE value="chore: add various formats of iris dataset" />
     <MESSAGE value="refactor: update iris dataset json location" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: update iris dataset json location" />
+    <MESSAGE value="build: add smile dependency" />
+    <MESSAGE value="feat: a similar knn classification on iris dataset but with smile's implementation" />
+    <MESSAGE value="chore: update workspace" />
+    <MESSAGE value="refactor: rename to SmileKNNTesting" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename to SmileKNNTesting" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/haifengl/smile-core/6.3.0/smile-core-6.3.0-sources.jar!/smile/clustering/CentroidClustering.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
