@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="feat: max heapify">
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="chore: update workspace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" afterDir="false" />
     </list>
@@ -382,14 +382,29 @@
       <option name="project" value="LOCAL" />
       <updated>1793958264794</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fix: edge case where an already max heap array is passed">
+      <option name="closed" value="true" />
+      <created>1793976125156</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1793976125156</updated>
+    </task>
+    <task id="LOCAL-00037" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1793976129906</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1793976129906</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: add jetbrains-annotations" />
     <MESSAGE value="feat: add ascending insertion sort on integers" />
     <MESSAGE value="build: add jackson bom and databind dependency" />
     <MESSAGE value="chore: update gitignore" />
@@ -412,9 +427,10 @@
     <MESSAGE value="feat: add k-means clustering of iris dataset" />
     <MESSAGE value="feat: recursive insertion sort" />
     <MESSAGE value="feat: iterative binary search" />
-    <MESSAGE value="chore: update workspace" />
     <MESSAGE value="feat: max heapify" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: max heapify" />
+    <MESSAGE value="fix: edge case where an already max heap array is passed" />
+    <MESSAGE value="chore: update workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -426,12 +442,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
-          <line>17</line>
-          <properties class="io.github.eggy03.algorithms.heap.MaxHeap" method="maxHeapify">
+          <line>81</line>
+          <properties class="io.github.eggy03.algorithms.heap.MaxHeap" method="insert">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
+          <line>113</line>
+          <properties class="io.github.eggy03.algorithms.heap.MaxHeap">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
