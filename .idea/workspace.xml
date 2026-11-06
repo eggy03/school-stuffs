@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="chore: update workspace">
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="feat: add deletion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" afterDir="false" />
     </list>
@@ -56,7 +56,7 @@
     "Application.InsertionSort.executor": "Run",
     "Application.KNNExample.executor": "Run",
     "Application.KNNTesting.executor": "Run",
-    "Application.MaxHeap.executor": "Run",
+    "Application.MaxHeap.executor": "Debug",
     "Application.SmileKMeansTesting.executor": "Run",
     "Application.SmileKNNCrossValidation.executor": "Run",
     "Application.SmileKNNExample.executor": "Run",
@@ -398,15 +398,37 @@
       <option name="project" value="LOCAL" />
       <updated>1793976129906</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1793978874897</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1793978874897</updated>
+    </task>
+    <task id="LOCAL-00039" summary="feat: add insertion to max heap">
+      <option name="closed" value="true" />
+      <created>1793978890213</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1793978890213</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat: add deletion">
+      <option name="closed" value="true" />
+      <created>1793980436525</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1793980436526</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add ascending insertion sort on integers" />
-    <MESSAGE value="build: add jackson bom and databind dependency" />
     <MESSAGE value="chore: update gitignore" />
     <MESSAGE value="chore: add iris dataset" />
     <MESSAGE value="feat: create a simple KNN classifier" />
@@ -430,7 +452,9 @@
     <MESSAGE value="feat: max heapify" />
     <MESSAGE value="fix: edge case where an already max heap array is passed" />
     <MESSAGE value="chore: update workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace" />
+    <MESSAGE value="feat: add insertion to max heap" />
+    <MESSAGE value="feat: add deletion" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add deletion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -442,21 +466,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
-          <line>81</line>
-          <properties class="io.github.eggy03.algorithms.heap.MaxHeap" method="insert">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
-          <line>113</line>
+          <line>168</line>
           <properties class="io.github.eggy03.algorithms.heap.MaxHeap">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
+          <line>112</line>
+          <properties class="io.github.eggy03.algorithms.heap.MaxHeap" method="delete">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
