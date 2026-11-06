@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="chore: update workspace">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/search/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,7 @@
     "Application.InsertionSort.executor": "Run",
     "Application.KNNExample.executor": "Run",
     "Application.KNNTesting.executor": "Run",
+    "Application.MaxHeap.executor": "Run",
     "Application.SmileKMeansTesting.executor": "Run",
     "Application.SmileKNNCrossValidation.executor": "Run",
     "Application.SmileKNNExample.executor": "Run",
@@ -71,8 +73,12 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "G:/GitHub/school-stuffs",
+    "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
@@ -91,8 +97,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2df11533d9fe-intellij.indexing.shared.core-IU-262.11879.100" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.11879.100" />
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.200" />
       </set>
     </attachedChunks>
   </component>
@@ -352,14 +358,29 @@
       <option name="project" value="LOCAL" />
       <updated>1793626537118</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat: iterative binary search">
+      <option name="closed" value="true" />
+      <created>1793634103827</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1793634103827</updated>
+    </task>
+    <task id="LOCAL-00033" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1793634111439</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1793634111439</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: add IDE files" />
     <MESSAGE value="build: add pom.xml" />
     <MESSAGE value="chore: add jetbrains-annotations" />
     <MESSAGE value="feat: add ascending insertion sort on integers" />
@@ -383,6 +404,7 @@
     <MESSAGE value="feat: add cross validation testing for k-nn" />
     <MESSAGE value="feat: add k-means clustering of iris dataset" />
     <MESSAGE value="feat: recursive insertion sort" />
+    <MESSAGE value="feat: iterative binary search" />
     <MESSAGE value="chore: update workspace" />
     <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace" />
   </component>
