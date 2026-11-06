@@ -112,6 +112,16 @@ public class MaxHeap {
 
     public int delete() {
 
+        if (maxHeapArray.length == 0)
+            return Integer.MIN_VALUE;
+
+        if (maxHeapArray.length == 1) {
+            int element = maxHeapArray[0];
+            maxHeapArray = new int[0];
+
+            return element;
+        }
+
         // get the first element - this will be deleted
         int elementToBeDeleted = maxHeapArray[0];
 
@@ -160,7 +170,15 @@ public class MaxHeap {
 
     static void main() {
         int[] someArray = {50, 30, 20, 15, 10, 8, 16};
+
         MaxHeap maxHeap = new MaxHeap(someArray);
         log.info("\nGiven Array: {}\nMax-Heapified Array:{}", Arrays.toString(someArray), Arrays.toString(maxHeap.getMaxHeapArray()));
+
+        // heap-sort
+        for (int i = someArray.length - 1; i >= 0; i--) {
+            someArray[i] = maxHeap.delete();
+        }
+
+        log.info("\nHeap Sorted Array: {}", Arrays.toString(someArray));
     }
 }
