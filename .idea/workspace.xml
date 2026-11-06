@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="feat: add deletion">
+    <list default="true" id="002c76e6-d047-42ad-8766-77461446153f" name="Changes" comment="chore: update workspace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,43 +48,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.BinarySearch.executor": "Run",
-    "Application.InsertionSort.executor": "Run",
-    "Application.KNNExample.executor": "Run",
-    "Application.KNNTesting.executor": "Run",
-    "Application.MaxHeap.executor": "Debug",
-    "Application.SmileKMeansTesting.executor": "Run",
-    "Application.SmileKNNCrossValidation.executor": "Run",
-    "Application.SmileKNNExample.executor": "Run",
-    "Application.SmileKNNTesting.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "datagrid.heatmap.switchedByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/GitHub/school-stuffs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.BinarySearch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InsertionSort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KNNExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KNNTesting.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MaxHeap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SmileKMeansTesting.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SmileKNNCrossValidation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SmileKNNExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SmileKNNTesting.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;datagrid.heatmap.switchedByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/GitHub/school-stuffs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\GitHub\school-stuffs\src\main\resources\ml\knn\iris\arff" />
@@ -422,14 +421,29 @@
       <option name="project" value="LOCAL" />
       <updated>1793980436526</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="refactor: add early termination and fix edge case npe for delete()&#10;&#10;- also show heapsort">
+      <option name="closed" value="true" />
+      <created>1793981855928</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1793981855928</updated>
+    </task>
+    <task id="LOCAL-00042" summary="chore: update workspace">
+      <option name="closed" value="true" />
+      <created>1793981863190</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1793981863190</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: update gitignore" />
     <MESSAGE value="chore: add iris dataset" />
     <MESSAGE value="feat: create a simple KNN classifier" />
     <MESSAGE value="chore: create an example for using the KNN classifier" />
@@ -451,10 +465,11 @@
     <MESSAGE value="feat: iterative binary search" />
     <MESSAGE value="feat: max heapify" />
     <MESSAGE value="fix: edge case where an already max heap array is passed" />
-    <MESSAGE value="chore: update workspace" />
     <MESSAGE value="feat: add insertion to max heap" />
     <MESSAGE value="feat: add deletion" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add deletion" />
+    <MESSAGE value="refactor: add early termination and fix edge case npe for delete()&#10;&#10;- also show heapsort" />
+    <MESSAGE value="chore: update workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -463,24 +478,6 @@
           <url>jar://$MAVEN_REPOSITORY$/com/github/haifengl/smile-core/6.3.0/smile-core-6.3.0-sources.jar!/smile/clustering/CentroidClustering.java</url>
           <line>142</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
-          <line>168</line>
-          <properties class="io.github.eggy03.algorithms.heap.MaxHeap">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/io/github/eggy03/algorithms/heap/MaxHeap.java</url>
-          <line>112</line>
-          <properties class="io.github.eggy03.algorithms.heap.MaxHeap" method="delete">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
