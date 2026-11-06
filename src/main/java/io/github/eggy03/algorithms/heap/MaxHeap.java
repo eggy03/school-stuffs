@@ -110,15 +110,57 @@ public class MaxHeap {
         return this;
     }
 
+    public int delete() {
+
+        // get the first element - this will be deleted
+        int elementToBeDeleted = maxHeapArray[0];
+
+        // get the last element
+        int elementToBeReplacedInPlacedAtFirst = maxHeapArray[maxHeapArray.length - 1];
+
+        // declare a copy with 1 less space
+        int[] maxHeapArrayCopy = Arrays.copyOf(maxHeapArray, maxHeapArray.length - 1);
+
+        // replace the first element with the last element
+        maxHeapArrayCopy[0] = elementToBeReplacedInPlacedAtFirst;
+
+        // maintain max heap condition
+        int parentNodeIndex = 0;
+
+        while (!isLeafNode(parentNodeIndex, maxHeapArrayCopy)) {
+
+            int parentNode = maxHeapArrayCopy[parentNodeIndex];
+
+            int leftChildIndex = (2 * parentNodeIndex) + 1;
+            int rightChildIndex = (2 * parentNodeIndex) + 2;
+
+            int leftChildNode = maxHeapArrayCopy[leftChildIndex];
+            int rightChildNode = rightChildIndex < maxHeapArrayCopy.length ? maxHeapArrayCopy[rightChildIndex] : Integer.MIN_VALUE; // right child won't exist in case of complete but non-full binary trees
+
+            if (parentNode < leftChildNode || parentNode < rightChildNode) {
+
+                if (leftChildNode >= rightChildNode) {
+                    maxHeapArrayCopy[parentNodeIndex] = leftChildNode;
+                    maxHeapArrayCopy[leftChildIndex] = parentNode;
+                    parentNodeIndex = leftChildIndex;
+                } else {
+                    maxHeapArrayCopy[parentNodeIndex] = rightChildNode;
+                    maxHeapArrayCopy[rightChildIndex] = parentNode;
+                    parentNodeIndex = rightChildIndex;
+                }
+            } else {
+                break;
+            }
+        }
+
+        maxHeapArray = maxHeapArrayCopy;
+        return elementToBeDeleted;
+    }
+
 
     static void main() {
         int[] someArray = {50, 30, 20, 15, 10, 8, 16};
-        log.info("\nGiven Array: {}\nMax-Heapified Array:{}",
-                Arrays.toString(someArray),
-                Arrays.toString(new MaxHeap(someArray)
-                        .insert(60)
-                        .getMaxHeapArray()
-                )
-        );
+        MaxHeap maxHeap = new MaxHeap(someArray);
+        log.info("\nGiven Array: {}\nMax-Heapified Array:{}", Arrays.toString(someArray), Arrays.toString(maxHeap.getMaxHeapArray()));
     }
 }
