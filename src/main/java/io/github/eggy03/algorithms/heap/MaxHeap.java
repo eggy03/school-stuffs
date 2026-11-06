@@ -28,33 +28,34 @@ public class MaxHeap {
             return copy;
 
         // browse backwards after skipping leaf nodes (n/2) - 1
-        for (int i = (copy.length / 2) - 1; i >= 0 ; i--) { // O(n)
+        for (int i = (copy.length / 2) - 1; i >= 0; i--) { // O(n)
 
             // compare and swap parent with leaf nodes for satisfying max heap
             // repeat until leaf nodes are reached
             int parentNodeIndex = i;
-            while (!isLeafNode(parentNodeIndex, copy)) { // theoretically O(n * log n)
+            while (parentNodeIndex >= 0 && !isLeafNode(parentNodeIndex, copy)) { // theoretically O(n * log n)
 
                 int parentNode = copy[parentNodeIndex];
 
                 int leftChildIndex = (2 * parentNodeIndex) + 1;
                 int rightChildIndex = (2 * parentNodeIndex) + 2;
 
-                int leftChild = copy[leftChildIndex];
-                int rightChild = rightChildIndex < copy.length ? copy[rightChildIndex] : Integer.MIN_VALUE; // right child won't exist in case of complete but non-full binary trees
+                int leftChildNode = copy[leftChildIndex];
+                int rightChildNode = rightChildIndex < copy.length ? copy[rightChildIndex] : Integer.MIN_VALUE; // right child won't exist in case of complete but non-full binary trees
 
-                if (parentNode < leftChild || parentNode < rightChild) {
-                    int temp = copy[parentNodeIndex];
+                if (parentNode < leftChildNode || parentNode < rightChildNode) {
 
-                    if (leftChild >= rightChild) {
-                        copy[parentNodeIndex] = leftChild;
-                        copy[leftChildIndex] = temp;
+                    if (leftChildNode >= rightChildNode) {
+                        copy[parentNodeIndex] = leftChildNode;
+                        copy[leftChildIndex] = parentNode;
                         parentNodeIndex = leftChildIndex;
                     } else {
-                        copy[parentNodeIndex] = rightChild;
-                        copy[rightChildIndex] = temp;
+                        copy[parentNodeIndex] = rightChildNode;
+                        copy[rightChildIndex] = parentNode;
                         parentNodeIndex = rightChildIndex;
                     }
+                } else {
+                    parentNodeIndex--; // if already max-heapified, shift back by one node upto root
                 }
             }
         }
